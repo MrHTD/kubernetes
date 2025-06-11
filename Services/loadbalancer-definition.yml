@@ -4,12 +4,9 @@ metadata:
   name: myapp-service
 
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - port: 80
       targetPort: 80
       nodePort: 30008
-  selector:
-    app: myapp
-    type: front-end
-  # The selector matches the labels in the pod template
+  # The port is exposed on the service
