@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: DaemonSet
+# This DaemonSet deploys a monitoring agent on each node in the cluster.
+metadata:
+  name: monitoring-daemon
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: monitoring-agent
+  template:
+    metadata:
+      labels:
+        app: monitoring-agent
+    spec:
+      - name: monitoring-agent
+        image: monitoring-agent

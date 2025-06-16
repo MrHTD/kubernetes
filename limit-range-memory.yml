@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: memory-resource-constraints
+  namespace: default
+
+spec:
+  limits:
+    - default:
+        memory: 1Gi
+      # This is the default Memory limit for containers in this namespace
+      defaultRequest:
+        memory: 1Gi
+      # This is the default Memory request for containers in this namespace
+      max:
+        memory: 1Gi
+      # This is the maximum Memory limit for containers in this namespace
+      min:
+        memory: 500Mi
+      # This is the minimum Memory request for containers in this namespace
+      type: Container
+      # This specifies that the limits apply to containers
