@@ -7,6 +7,11 @@ metadata:
     type: front-end
 
 spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      type: front-end
+  # The selector must match the labels in the pod template
   template:
     metadata:
       name: myapp-pod
@@ -17,8 +22,3 @@ spec:
       containers:
         - name: nginx-container
           image: nginx
-  replicas: 3
-  selector:
-    matchLabels:
-      type: front-end
-  # The selector must match the labels in the pod template

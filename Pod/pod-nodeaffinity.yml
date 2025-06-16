@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: myapp-pod
+  namespace: dev
+  # The pod is defined in a specific namespace
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+  # The pod definition does not specify replicas, as it is a single pod
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: size
+                operator: Exists

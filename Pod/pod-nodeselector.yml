@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: myapp-pod
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+  # The pod definition does not specify replicas, as it is a single pod
+  NodeSelector:
+    size: Large
+  # The pod will be scheduled on nodes with the label size: Large
