@@ -1,0 +1,20 @@
+apiVersion: autoscaling.k8s.io/v1
+# This file defines a Vertical Pod Autoscaler (VPA) for a Kubernetes deployment.
+kind: VerticalPodAutoscaler
+metadata:
+  name: my-app-vpa
+spec:
+  ScaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: my-app
+  updatePolicy:
+    updateMode: "Auto"
+  resourcePolicy:
+    containerPolicies:
+      - containerName: my-app
+        minAllowed:
+          cpu: "250m"
+        maxAllowed:
+          cpu: "2"
+        controlledResources: ["cpu"]
