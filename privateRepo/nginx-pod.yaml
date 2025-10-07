@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+    - name: nginx
+      image: docker.io/apps/my-simple-app
+  imagePullSecrets:
+    - name: regcred

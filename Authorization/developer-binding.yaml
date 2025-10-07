@@ -6,7 +6,7 @@ metadata:
 subjects:
   - kind: User
     name: dev-user
-    apiGroups: rbac.authorization.k8s.io/v1
+    apiGroups: rbac.authorization.k8s.io
 # This RoleBinding grants the developer role to the user dev-user in the dev namespace.
 RoleRef:
   kind: Role
