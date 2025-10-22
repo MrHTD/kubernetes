@@ -1,0 +1,8 @@
+apiVersion: flights.com/v1
+kind: FlightTicket
+metadata:
+  name: flight-ticket
+spec:
+  from: Karachi
+  to: London
+  number: 2
