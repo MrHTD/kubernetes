@@ -3,12 +3,8 @@ kind: Gateway
 metadata:
   name: myapp-gateway
 spec:
-  # gatewayClassName: nginx
-  selector:
-    app.kubernetes.io/name: nginx-gateway
-  ports:
-    - protocol: TCP
+  gatewayClassName: nginx
+  listeners:
+    - name: http
+      protocol: HTTP
       port: 80
-      targetPort: 80
-      nodePort: 30080
-  type: NodePort
