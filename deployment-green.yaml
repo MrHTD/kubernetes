@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: myapp
-          image: mughis01/blue-green-app:green
+          image: mughis01/blue-green-app:v1.0green
           ports:
             - containerPort: 80
           readinessProbe:
