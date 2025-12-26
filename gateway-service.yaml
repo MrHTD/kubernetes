@@ -4,10 +4,10 @@ metadata:
   name: myapp-gateway-nodeport
 spec:
   selector:
-    app.kubernetes.io/name: nginx-gateway # controller pods
+    app.kubernetes.io/name: myapp-gateway-nginx # controller pods
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-      nodePort: 32080
+      nodePort: 30080
   type: NodePort
