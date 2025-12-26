@@ -5,11 +5,10 @@ metadata:
   labels:
     app: myapp
 spec:
-  type: ClusterIP
   selector:
     app: myapp
-    version: blue
   ports:
     - port: 80
       targetPort: 80
       # nodePort: 30080
+  type: ClusterIP
