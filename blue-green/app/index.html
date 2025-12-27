@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue App</title>
+    <style>
+        /* 1. Reset and Base Styles */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 2. Card Container Styling */
+        .app-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(65, 105, 225, 0.2);
+            text-align: center;
+            min-width: 300px;
+            border-top: 5px solid royalblue;
+        }
+
+        /* 3. Typography */
+        h1 {
+            color: #333;
+            /* CHANGED: Increased from 0.5rem to 1.5rem for better spacing */
+            margin-bottom: 1.5rem; 
+            font-size: 2rem;
+            margin-top: 0; /* Ensures no extra space at the top */
+        }
+
+        .version-badge {
+            background-color: royalblue;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-card">
+        <h1>Kubernetes App</h1>
+        <div class="version-badge">Blue</div>
+        <div>Version: v1.0</div>
+    </div>
+
+</body>
+</html>
