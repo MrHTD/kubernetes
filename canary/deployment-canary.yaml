@@ -26,4 +26,4 @@ spec:
             httpGet:
               path: /
               port: 8080
-              failedthreshold: 1
+              failedThreshold: 3
