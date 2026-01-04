@@ -20,10 +20,11 @@ spec:
       containers:
         - name: app
           image: mughis01/canary-deployment:v1.0canary
+          imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8080
+            - containerPort: 80
           readinessProbe:
             httpGet:
               path: /
-              port: 8080
+              port: 80
             failureThreshold: 3
