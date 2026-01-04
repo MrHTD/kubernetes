@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-canary
+  labels:
+    app: app
+    version: canary
+spec:
+  replicas: 1
+  selector:
+    matchlabels:
+      app: app
+      version: canary
+  template:
+    metadata:
+      labels:
+        app: app
+        version: canary
+    spec:
+      containers:
+        - name: app
+          image: mughis01/canary-deployment:v1.0canary
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+              failedthreshold: 1

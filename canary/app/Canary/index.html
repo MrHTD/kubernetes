@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canary App</title>
+    <style>
+        /* 1. Dark Theme Base */
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #222;
+            /* Darker background for contrast */
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 2. Terminal Card styling */
+        .terminal-card {
+            background: #2d2d2d;
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            text-align: left;
+            min-width: 350px;
+            border: 1px solid #444;
+            /* CANARY ACCENT: Gold/Yellow */
+            border-top: 6px solid #FFD700;
+            position: relative;
+        }
+
+        /* 3. Typography & Accents */
+        h1 {
+            color: #FFD700;
+            /* Canary Yellow */
+            margin: 0 0 20px 0;
+            font-size: 1.8rem;
+            letter-spacing: -1px;
+            border-bottom: 2px dashed #444;
+            padding-bottom: 10px;
+        }
+
+        .status-line {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .highlight {
+            color: #4CAF50;
+            /* Green for Active */
+            font-weight: bold;
+        }
+
+        .version-highlight {
+            color: #FFD700;
+            /* Gold for Version text */
+            font-weight: bold;
+        }
+
+        /* Traffic Bar Section */
+        .traffic-section {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #1a1a1a;
+            /* Darker inset */
+            border: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        .ascii-bar {
+            color: #4CAF50;
+            /* Green Bar for visibility */
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #FFD700;
+            color: #000;
+            padding: 4px 8px;
+            font-weight: bold;
+            font-size: 0.75rem;
+            border-radius: 2px;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Blinking cursor effect */
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 18px;
+            background-color: #FFD700;
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="terminal-card">
+        <h1>> Kubernetes_App</h1>
+
+        <div class="status-line">
+            <span>Status:</span> <span class="highlight">Active</span>
+        </div>
+        <div class="status-line">
+            <span>Release:</span> <span class="version-highlight">Canary Build</span>
+        </div>
+        <div class="status-line">
+            <span>Ver:</span> <span>1.0.0</span>
+        </div>
+
+        <div class="traffic-section">
+            <div>NETWORK_ALLOCATION:</div>
+            <div class="ascii-bar">[██░░░░░░░░] 20%</div>
+        </div>
+
+        <div class="tag">WARNING: TEST ENV</div>
+        <span class="cursor"></span>
+    </div>
+
+</body>
+
+</html>

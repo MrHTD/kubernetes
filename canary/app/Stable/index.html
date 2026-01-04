@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canary App</title>
+    <title>Stable App</title>
     <style>
         /* 1. Dark Theme Base */
         body, html {
             height: 100%;
             margin: 0;
-            font-family: 'Courier New', Courier, monospace; /* Monospace for terminal look */
-            background-color: #444; /* Very dark grey */
-            color: #e0e0e0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #222; /* Slightly darker for better contrast */
+            color: #000;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,43 +19,63 @@
 
         /* 2. Terminal Card styling */
         .terminal-card {
-            background: #2d2d2d;
+            background: #fff;
             padding: 40px;
-            border-radius: 8px;
+            border-radius: 4px; /* Sharper corners for terminal feel */
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-            text-align: left; /* Aligned left like a console */
-            min-width: 320px;
+            text-align: left;
+            min-width: 350px;
             border: 1px solid #444;
-            border-top: 4px solid #FFD700; /* Gold/Yellow for Canary */
+            border-top: 6px solid royalblue; /* Thicker accent */
             position: relative;
         }
 
         /* 3. Typography & Accents */
         h1 {
-            color: #FFD700; /* Canary Yellow */
+            color: royalblue;
             margin: 0 0 20px 0;
             font-size: 1.8rem;
             letter-spacing: -1px;
+            border-bottom: 2px dashed #ddd; /* Divider line */
+            padding-bottom: 10px;
         }
 
         .status-line {
             margin-bottom: 15px;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-between; /* Spreads text to edges */
         }
 
         .highlight {
-            color: #4CAF50; /* Green for "Running" status */
+            color: royalblue;
+            font-weight: bold;
+        }
+
+        /* New Traffic Bar Styling */
+        .traffic-section {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            font-size: 0.9rem;
+        }
+
+        .ascii-bar {
+            color: royalblue;
+            font-weight: bold;
         }
 
         .tag {
             display: inline-block;
-            background: #FFD700;
-            color: #1a1a1a;
+            background: #ff9800;
+            color: #fff;
             padding: 4px 8px;
             font-weight: bold;
-            font-size: 0.8rem;
-            border-radius: 4px;
-            margin-top: 10px;
+            font-size: 0.75rem;
+            border-radius: 2px;
+            margin-top: 20px;
+            text-transform: uppercase;
         }
 
         /* Blinking cursor effect */
@@ -63,9 +83,10 @@
             display: inline-block;
             width: 10px;
             height: 18px;
-            background-color: #e0e0e0;
+            background-color: #333;
             animation: blink 1s step-end infinite;
             vertical-align: middle;
+            margin-left: 5px;
         }
 
         @keyframes blink {
@@ -82,10 +103,16 @@
             <span>Status:</span> <span class="highlight">Active</span>
         </div>
         <div class="status-line">
-            <span>Release:</span> <span>Canary Build</span>
+            <span>Release:</span> <span>Stable Build</span>
         </div>
         <div class="status-line">
             <span>Ver:</span> <span>1.0.0</span>
+        </div>
+
+        <div class="traffic-section">
+            <div>NETWORK_ALLOCATION:</div>
+            <br>
+            <div class="ascii-bar">[██████████░░] 80%</div>
         </div>
 
         <div class="tag">WARNING: TEST ENV</div>
