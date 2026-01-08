@@ -41,7 +41,7 @@ deployment-strategies/
 ```
 ## Canary Deployment Traffic Flow
 
-```
+```text
 User
  ↓
 LoadBalancer (External)
@@ -53,5 +53,8 @@ HTTPRoute (Traffic Splitting)
 Service
  ↓
 Pods (Stable + Canary)
-Example traffic split:
 ```
+Example traffic split:
+
+- 90% → Stable version
+- 10% → Canary version
