@@ -1,10 +1,11 @@
+### Blue Deployment Configuration ###
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app-blue
   labels:
     app: myapp
-    version: green
+    version: blue
 spec:
   replicas: 3
   selector:
