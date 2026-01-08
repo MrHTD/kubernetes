@@ -38,10 +38,10 @@ deployment-strategies/
 │   ├── gateway.yaml
 │   ├── httproute.yaml
 │   └── loadbalancer.yaml
+```
+## Canary Deployment Traffic Flow
 
-Canary Deployment Traffic Flow
-
-``
+```
 User
  ↓
 LoadBalancer (External)
@@ -54,4 +54,4 @@ Service
  ↓
 Pods (Stable + Canary)
 Example traffic split:
-``
+```
