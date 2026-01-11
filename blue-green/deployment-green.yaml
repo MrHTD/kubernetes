@@ -3,23 +3,23 @@ kind: Deployment
 metadata:
   name: app-green
   labels:
-    app: myapp
+    app: blue-green-app
     version: green
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: myapp
+      app: blue-green-app
       version: green
   template:
     metadata:
       labels:
-        app: myapp
+        app: blue-green-app
         version: green
     spec:
       containers:
-        - name: myapp
-          image: mughis01/blue-green-app:v1.0green
+        - name: blue-green-app
+          image: mughis01/blue-green-app:green
           ports:
             - containerPort: 80
           readinessProbe:
