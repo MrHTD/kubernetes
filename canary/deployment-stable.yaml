@@ -3,22 +3,22 @@ kind: Deployment
 metadata:
   name: app-stable
   labels:
-    app: app
+    app: canary-deployment
     version: stable
 spec:
   replicas: 4
   selector:
     matchLabels:
-      app: app
+      app: canary-deployment
       version: stable
   template:
     metadata:
       labels:
-        app: app
+        app: canary-deployment
         version: stable
     spec:
       containers:
-        - name: app
+        - name: canary-deployment
           image: mughis01/canary-deployment:v1.0stable
           imagePullPolicy: IfNotPresent
           ports:

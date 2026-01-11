@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: canary-gateway-nodeport
+  name: canary-deployment-gateway-nodeport
 spec:
   selector:
-    app.kubernetes.io/name: canary-gateway-nginx # controller pods
+    app.kubernetes.io/name: canary-deployment-gateway-nginx # controller pods
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-      nodePort: 30080
+      nodePort: 30090
   type: NodePort

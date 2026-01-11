@@ -4,7 +4,7 @@ metadata:
   name: canary-split-route
 spec:
   parentRefs:
-    - name: canary-gateway
+    - name: canary-deployment-gateway
   rules:
     backendRefs:
       # Stable service with 80% traffic
