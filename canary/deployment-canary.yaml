@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: canary-deployment
-          image: mughis01/canary-deployment:v1.0canary
+          image: mughis01/canary-deployment:canary
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
