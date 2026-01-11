@@ -6,12 +6,12 @@ spec:
   parentRefs:
     - name: canary-deployment-gateway
   rules:
-    backendRefs:
-      # Stable service with 80% traffic
-      - name: service-stable
-        port: 80
-        weight: 80
-      # Canary service with 20% traffic
-      - name: service-canary
-        port: 80
-        weight: 20
+    - backendRefs:
+        # Stable service with 80% traffic
+        - name: service-stable
+          port: 80
+          weight: 80
+        # Canary service with 20% traffic
+        - name: service-canary
+          port: 80
+          weight: 20
