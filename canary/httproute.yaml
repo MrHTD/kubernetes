@@ -8,10 +8,14 @@ spec:
   rules:
     - backendRefs:
         # Stable service with 80% traffic
-        - name: service-stable
+        - name: canary-deployment
           port: 80
           weight: 80
+          selector:
+            version: stable
         # Canary service with 20% traffic
-        - name: service-canary
+        - name: canary-deployment
           port: 80
           weight: 20
+          selector:
+            version: canary
